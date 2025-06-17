@@ -30,23 +30,18 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Column(
                     children: [
-                      AppForm(labelText: 'Email'),
+                      AppForm(
+                        labelText: 'Email',
+                        keyboardType: TextInputType.emailAddress,
+                      ),
                       SpaceHeight(24.0),
                       AppForm(labelText: 'Name'),
                       SpaceHeight(24.0),
-                      AppForm(labelText: 'Password'),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Forgot password',
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          ),
-                        ),
-                      ),
+                      AppForm(labelText: 'Password', isPassword: true),
                       SpaceHeight(24.0),
-                      AppButton.filled(onPressed: () {}, label: "Login"),
+                      AppForm(labelText: 'Retype Password', isPassword: true),
+                      SpaceHeight(24.0),
+                      AppButton.filled(onPressed: () {}, label: "Register"),
                       SpaceHeight(24.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
